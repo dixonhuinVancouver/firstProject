@@ -1,2 +1,1 @@
 # homework
-mvn clean install
