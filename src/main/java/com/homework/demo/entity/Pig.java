@@ -24,8 +24,9 @@ public class Pig {
 	
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
-
-    private String sex;
+    
+	//1 stand for male, 0 stand for female
+    private Integer sex;
 
     private String location;
 
