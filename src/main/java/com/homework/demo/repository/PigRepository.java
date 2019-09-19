@@ -10,4 +10,6 @@ import com.homework.demo.entity.Pig;
 public interface PigRepository extends JpaRepository<Pig, Long> {
 	@Query("select p from Pig p where p.isImmunized = true")
 	List<Pig> findAllImmunizedPigs();
+	
+	List<Pig> findBySexAndIsImmunized(Integer sex, Boolean isImmunnized);
 }

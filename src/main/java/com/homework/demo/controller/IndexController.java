@@ -25,7 +25,7 @@ public class IndexController {
 	
 	@PostMapping("/search") 
 	public String search(@RequestParam("sex") int sex, @RequestParam("immunized") boolean immunized, Model model) {
-		List<Pig> pigs = pigRepository.findAll();
+		List<Pig> pigs = pigRepository.findBySexAndIsImmunized(sex, immunized);
 		model.addAttribute("pigs", pigs);
 		return "search-result";
 	}
