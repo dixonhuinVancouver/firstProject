@@ -1,34 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+	crossorigin="anonymous" />
 
-<title>猪肉情况查询</title>
+<title>入栏仔猪信息</title>
 </head>
 <body>
-	<div class="container" style="padding-top:75px;">
-	  <form action="/pork/search" method="post">
-		<div class="form-group">
-			<label for="id">识别码</label> 
-			<input class="form-control" type="text" name="id" id='id'>
-			</input>
-		</div>
-		<button type="submit" class="btn btn-primary">查找</button>
-	 </form>
+	<div class="container" style="padding-top: 75px;">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">识别码</th>
+					<th scope="col">销售时间</th>
+					<th scope="col">地点</th>
+					<th scope="col">品种</th>					
+					<th scope="col">销售量(公斤）</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pork:${porks}">
+					<td th:text="${pork.pigId}">faked</td>
+					<td th:text="${pork.saleDate}">公</td>
+					<td th:text="${pork.location}">faked</td>
+					<td th:text="${pork.category}">faked</td>
+					<td th:text="${pork.weight}">yes</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

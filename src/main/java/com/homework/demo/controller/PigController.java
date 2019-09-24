@@ -51,9 +51,9 @@ public class PigController {
 		pig.setWeight(weight);
 		pig.setWeaned(weaned);
 
-		Pig savedStudent = pigRepository.save(pig);
+		Pig savedPig = pigRepository.save(pig);
 
-		URI url = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedStudent.getId())
+		URI url = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedPig.getId())
 				.toUri();
 
 		ResponseEntity.created(url).build();

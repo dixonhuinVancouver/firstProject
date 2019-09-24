@@ -14,6 +14,8 @@ public class Pork {
 	@Id
 	private Long id;
 	
+    private Long pigId;
+    
 	private String saleDate;
 
 	private String location;
@@ -28,7 +30,15 @@ public class Pork {
 		super();
 		this.id = id;
 	}
-    private Long pigId;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Long getPigId() {
 		return pigId;
 	}
@@ -70,13 +80,6 @@ public class Pork {
 	}
 
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 
 
